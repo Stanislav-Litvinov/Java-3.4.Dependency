@@ -1,6 +1,7 @@
 package ru.netology.manager;
 
 import lombok.Data;
+
 import ru.netology.domain.Movie;
 
 @Data
@@ -30,10 +31,12 @@ public class MovieManger {
 
     public Movie[] getLastAdd() {
         int moviesLength = movies.length;
-        if (moviesLength < defaultMovieLength) {
-            defaultMovieLength = moviesLength;
+        int localMovieLength = defaultMovieLength;
+        if (moviesLength < localMovieLength) {
+            localMovieLength = moviesLength;
         }
-        Movie[] result = new Movie[defaultMovieLength];
+        Movie[] result = new Movie[localMovieLength];
+
         for (int i = 0; i < result.length; i++) {
             int index = moviesLength - i - 1;
             result[i] = movies[index];

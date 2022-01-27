@@ -6,18 +6,17 @@ import ru.netology.domain.Movie;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MovieMangerTest {
-    MovieManger manger = new MovieManger();
 
-    private Movie first = new Movie(1, "http://", "Spider-Man: No Way Home", "Adventure");
-    private Movie second = new Movie(2, "http://", "No Time To Die", "Thriller");
-    private Movie third = new Movie(3, "http://", "Shang-Chi And The Legend Of The Ten Rings", "Fantasy");
-    private Movie fourth = new Movie(4, "http://", "The Father", "Drama");
-    private Movie fifth = new Movie(5, "http://", "Dune", "Adventure");
-    private Movie sixth = new Movie(6, "http://", "ШеA Quiet Place: Part II", "Thriller");
-    private Movie seventh = new Movie(7, "http://", "Palm Springs", "Mystery");
-    private Movie eighth = new Movie(8, "http://", "The Suicide Squad", "Adventure");
-    private Movie ninth = new Movie(9, "http://", "Free Guy", "Comedy");
-    private Movie tenth = new Movie(10, "http://", "Cruella", "Crime");
+    private final Movie first = new Movie(1, "http://", "Spider-Man: No Way Home", "Adventure");
+    private final Movie second = new Movie(2, "http://", "No Time To Die", "Thriller");
+    private final Movie third = new Movie(3, "http://", "Shang-Chi And The Legend Of The Ten Rings", "Fantasy");
+    private final Movie fourth = new Movie(4, "http://", "The Father", "Drama");
+    private final Movie fifth = new Movie(5, "http://", "Dune", "Adventure");
+    private final Movie sixth = new Movie(6, "http://", "ШеA Quiet Place: Part II", "Thriller");
+    private final Movie seventh = new Movie(7, "http://", "Palm Springs", "Mystery");
+    private final Movie eighth = new Movie(8, "http://", "The Suicide Squad", "Adventure");
+    private final Movie ninth = new Movie(9, "http://", "Free Guy", "Comedy");
+    private final Movie tenth = new Movie(10, "http://", "Cruella", "Crime");
 
     Movie[] expected = {tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
 
@@ -55,7 +54,7 @@ class MovieMangerTest {
     void mustShowNothing() {
         MovieManger manger = new MovieManger();
         Movie[] actual = manger.getLastAdd();
-        Movie[] expected = new Movie[0];
+        Movie[] expected = {};
         assertArrayEquals(expected, actual);
     }
 
